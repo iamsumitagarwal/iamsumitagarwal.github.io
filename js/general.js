@@ -134,52 +134,52 @@ $(document).ready(function() {
      * Ajax forms
      *-----------------------------------------------------------------*/
 
-    $('.form-ajax').each(function(){
+    // $('.form-ajax').each(function(){
 
-        $(this).validate({
-            submitHandler: function(form) {
+    //     $(this).validate({
+    //         submitHandler: function(form) {
 
-                var $submit_button = $(form).find('[type=submit]'),
-                    submit_button_text = $submit_button.html();
+    //             var $submit_button = $(form).find('[type=submit]'),
+    //                 submit_button_text = $submit_button.html();
 
-                $submit_button.attr('disabled', true);
-                $submit_button.html('Wait...');
+    //             $submit_button.attr('disabled', true);
+    //             $submit_button.html('Wait...');
 
-                $.ajax({
+    //             $.ajax({
 
-                    type   : 'post',
-                    url    : 'sendmail.php',
-                    data   : $(form).serialize(),
+    //                 type   : 'post',
+    //                 url    : 'sendmail.php',
+    //                 data   : $(form).serialize(),
 
-                    success: function() {
-                        $('.modal-result').html('Message sent successfully');
-                        $('.modal.in').modal('hide');
-                        $('#result').modal('show');
+    //                 success: function() {
+    //                     $('.modal-result').html('Message sent successfully');
+    //                     $('.modal.in').modal('hide');
+    //                     $('#result').modal('show');
 
-                        $submit_button.attr('disabled', false);
-                        $submit_button.html(submit_button_text);
-                    },
+    //                     $submit_button.attr('disabled', false);
+    //                     $submit_button.html(submit_button_text);
+    //                 },
 
-                    error: function(){
-                        $('.modal-result').html('Error sending message');
-                        $('.modal.in').modal('hide');
-                        $('#result').modal('show');
+    //                 error: function(){
+    //                     $('.modal-result').html('Error sending message');
+    //                     $('.modal.in').modal('hide');
+    //                     $('#result').modal('show');
 
-                        $submit_button.attr('disabled', false);
-                        $submit_button.html(submit_button_text);
-                    }
-                });
-            }
-        });
+    //                     $submit_button.attr('disabled', false);
+    //                     $submit_button.html(submit_button_text);
+    //                 }
+    //             });
+    //         }
+    //     });
 
-    });
+    // });
 
-    $('.modal').on('hide.bs.modal', function (e) {
-        var $body = $('body');
-        if (parseInt($body.css('padding-right')) > 0) {
-            $body.css('padding-right', '');
-        }
-    });
+    // $('.modal').on('hide.bs.modal', function (e) {
+    //     var $body = $('body');
+    //     if (parseInt($body.css('padding-right')) > 0) {
+    //         $body.css('padding-right', '');
+    //     }
+    // });
 
     /*-----------------------------------------------------------------
      * Preloader

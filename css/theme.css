@@ -902,7 +902,7 @@ textarea {
 
 .portfolio-category {
     opacity: .9;
-    text-transform: lowercase;
+    /*text-transform: lowercase;*/
 }
 
 .portfolio-modal {
