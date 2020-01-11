@@ -1006,6 +1006,7 @@ textarea {
     padding: 0 0 20px;
     overflow: hidden;
     border: solid 1px #ddd;
+    min-height: 160px;
 }
 
 .price-block h3 {
